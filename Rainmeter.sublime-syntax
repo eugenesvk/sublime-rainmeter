@@ -334,7 +334,7 @@ contexts:
         4: invalid.rainmeter
 
     # 
-    - match: "(?i)^\\s*(Measure)\\s*(=)\\s*((Calc|CPU|FreeDiskSpace|Loop|MediaKey|Memory|PhysicalMemory|SwapMemory|Net(In|Out|Total)|NowPlaying|Plugin|RecycleManager|Registry|Script|String|Time|Uptime|WebParser)|\"(Calc|CPU|FreeDiskSpace|Loop|MediaKey|Memory|PhysicalMemory|SwapMemory|Net(In|Out|Total)|NowPlaying|Plugin|RecycleManager|Registry|Script|String|Time|Uptime|WebParser)\")\\s*$"
+    - match: "(?i)^\\s*(Measure)\\s*(=)\\s*((Calc|CPU|FreeDiskSpace|Loop|MediaKey|Memory|PhysicalMemory|SwapMemory|Net(In|Out|Total)|NowPlaying|Plugin|RecycleManager|Registry|Script|String|SysInfo|Time|Uptime|WebParser)|\"(Calc|CPU|FreeDiskSpace|Loop|MediaKey|Memory|PhysicalMemory|SwapMemory|Net(In|Out|Total)|NowPlaying|Plugin|RecycleManager|Registry|Script|String|SysInfo|Time|Uptime|WebParser)\")\\s*$"
       scope: meta.option.measure.rainmeter
       captures: 
         1: storage.type.option.predefined.rainmeter
@@ -402,7 +402,7 @@ contexts:
     # - Plugin=ActionTimer
     # - Plugin=ActionTimer.dll
     # - Plugin=Plugins\ActionTimer.dll
-    - match: "(?i)^\\s*(plugin)\\s*(=)\\s*(((Plugins\\\\)?(ActionTimer|AdvancedCPU|CoreTemp|FolderInfo|FileView|InputText|iTunesPlugin|PerfMon|PingPlugin|PowerPlugin|Process|QuotePlugin|ResMon|RunCommand|SpeedFanPlugin|SysInfo|VirtualDesktops|UsageMonitor|WiFiStatus|AudioLevel|Win7AudioPlugin|WindowMessagePlugin)(\\.dll)?)|\"((Plugins\\\\)?(ActionTimer|AdvancedCPU|CoreTemp|FolderInfo|InputText|iTunes|MediaKey|NowPlaying|PerfMon|Ping|Power|Process|Quote|RecycleManager|ResMon|RunCommand|SpeedFan|SysInfo|VirtualDesktops|WebParser|UsageMonitor|WiFiStatus|Win7Audio|WindowMessage)(\\.dll)?)\")\\s*$"
+    - match: "(?i)^\\s*(plugin)\\s*(=)\\s*(((Plugins\\\\)?(ActionTimer|AdvancedCPU|CoreTemp|FolderInfo|FileView|InputText|iTunesPlugin|PerfMon|PingPlugin|PowerPlugin|Process|QuotePlugin|ResMon|RunCommand|SpeedFanPlugin|VirtualDesktops|UsageMonitor|WiFiStatus|AudioLevel|Win7AudioPlugin|WindowMessagePlugin)(\\.dll)?)|\"((Plugins\\\\)?(ActionTimer|AdvancedCPU|CoreTemp|FolderInfo|InputText|iTunes|MediaKey|NowPlaying|PerfMon|Ping|Power|Process|Quote|RecycleManager|ResMon|RunCommand|SpeedFan|VirtualDesktops|WebParser|UsageMonitor|WiFiStatus|Win7Audio|WindowMessage)(\\.dll)?)\")\\s*$"
       scope: meta.option.plugin.rainmeter
       captures: 
         1: storage.type.option.predefined.rainmeter
