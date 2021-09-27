@@ -1,7 +1,7 @@
 """
 This plugin is the entry point to the smart completion module.
 
-Basic functionalities are kontext detection and offer only meaningful auto completion options
+Basic functionalities are context detection and offer only meaningful auto completion options
 instead of every of them.
 """
 
