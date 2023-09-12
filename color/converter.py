@@ -38,7 +38,7 @@ def convert_hex_str_to_rgba_str(hex_string, has_alpha):
     hexes = [hex_string[i:i + 2] for i in range(0, len(hex_string), 2)]
     rgba = hexes_to_rgbs(hexes)
     alpha = rgba[-1]
-    if alpha is 255 and not has_alpha:
+    if alpha == 255 and not has_alpha:
         rgba = rgba[:-1]
     rgba_str = rgbs_to_string(rgba)
 

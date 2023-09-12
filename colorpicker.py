@@ -253,7 +253,7 @@ class RainmeterColorPickCommand(sublime_plugin.TextCommand):  # pylint: disable=
         else:
             # doing alpha calculation first so we do not need to catch ff and FF
             alpha = output[-2:]
-            if not has_alpha and alpha is "FF":
+            if not has_alpha and alpha == "FF":
                 output = output[:-2]
 
             # it can be either originally in lower or upper case
