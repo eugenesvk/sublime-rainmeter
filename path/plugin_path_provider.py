@@ -19,7 +19,7 @@ def get_cached_plugin_path():
     """Get the value of the #PLUGINSPATH# variable."""
     settingspath = get_cached_setting_path()
     if not settingspath:
-        logger.error("#SETTINGSPATH# resolution required but was not found")
+        logger.info("#SETTINGSPATH# resolution required but was not found")
         return
 
     return os.path.join(settingspath, "Plugins") + "\\"
