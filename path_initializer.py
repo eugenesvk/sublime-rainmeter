@@ -93,7 +93,7 @@ def __handle_program_path_init():
                 logger.info("No valid Rainmeter.exe found. Retrying again.")
                 browse_file(on_rainmeter_exe_browsed)
 
-        browse_file(on_rainmeter_exe_browsed)
+        # browse_file(on_rainmeter_exe_browsed)
 
 
 def __handle_skin_path_init():
