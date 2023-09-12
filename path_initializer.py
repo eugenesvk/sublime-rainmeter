@@ -157,9 +157,9 @@ def plugin_loaded():
     __handle_skin_path_init()
 
     padding = 16
-    logger.info("#PROGRAMPATH#:".ljust(padding) + get_cached_program_path())  # Rainmeter.exe
-    logger.info("#PROGRAMDRIVE#:".ljust(padding) + get_cached_program_drive())
-    logger.info("#SETTINGSPATH#:".ljust(padding) + get_cached_setting_path())  # Rainmeter.ini
-    logger.info("#SKINSPATH#:".ljust(padding) + get_cached_skin_path())  # Rainmeter/Skins path
-    logger.info("#PLUGINSPATH#:".ljust(padding) + get_cached_plugin_path())
-    logger.info("#ADDONSPATH#:".ljust(padding) + get_cached_addon_path())
+    logger.info("#PROGRAMPATH#:" .ljust(padding) + (get_cached_program_path()  or ''))  # Rainmeter.exe
+    logger.info("#PROGRAMDRIVE#:".ljust(padding) + (get_cached_program_drive() or ''))
+    logger.info("#SETTINGSPATH#:".ljust(padding) + (get_cached_setting_path()  or ''))  # Rainmeter.ini
+    logger.info("#SKINSPATH#:"   .ljust(padding) + (get_cached_skin_path()     or ''))  # Rainmeter/Skins path
+    logger.info("#PLUGINSPATH#:" .ljust(padding) + (get_cached_plugin_path()   or ''))
+    logger.info("#ADDONSPATH#:"  .ljust(padding) + (get_cached_addon_path()    or ''))

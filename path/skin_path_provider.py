@@ -77,6 +77,8 @@ def get_path_from_portable_rm(rm_path, settings_path):
 
     In this case, the Skins folder is inside the rainmeter path.
     """
+    if not rm_path:
+        return None
     if os.path.samefile(rm_path, settings_path):
         logger.info("Skin path found in #PROGRAMPATH#" +
                     " because portable installation")

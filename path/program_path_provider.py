@@ -32,15 +32,19 @@ def _get_rainmeter_registry_key():
 
     not much we can do to handle that
     """
-    return winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, "SOFTWARE\\WOW6432Node\\Rainmeter")
-
+    try:
+        return winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, "SOFTWARE\\WOW6432Node\\Rainmeter")
+    except FileNotFoundError:
+        return None
 
 def get_rm_path_from_registry():
     """Registry."""
     rainmeter_key = _get_rainmeter_registry_key()
-    rainmeter_path = winreg.QueryValue(rainmeter_key, None)
-
-    return rainmeter_path
+    if rainmeter_key:
+        rainmeter_path = winreg.QueryValue(rainmeter_key, None)
+        return rainmeter_path
+    else:
+        return None
 
 
 def _executable_exists(rm_path):
@@ -83,14 +87,13 @@ def get_cached_program_path():
         rm_path = get_rm_path_from_registry()
 
     # Check if path exists and contains Rainmeter.exe
-    if not os.path.isdir(rm_path):
+    if     not rm_path \
+        or not os.path.isdir(rm_path):
         message = """Path to Rainmeter.exe could neither be found:
-
-                     * in the settings,
-                     * in the standard directory,
-                     * nor via registry.
-
-                     Check your \"rainmeter_path\" setting."""
+            • in the settings
+            • in the standard directory
+            • via registry
+            Check your \"rainmeter_path\" setting."""
         logger.info(message)
         return
 
